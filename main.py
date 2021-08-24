@@ -3,6 +3,8 @@ from flask import request
 import pandas as pd
 import numpy as np
 
+app = Flask(__name__)
+
 def html_function(value1, value2, value3):
     if len(value1) == 0 and len(value2) == 0  and len(value3) == 0 :
         return("""<table class="table_center" id="projection results">
@@ -243,8 +245,6 @@ def html_function(value1, value2, value3):
                         </body>
                         """)
 
-app = Flask(__name__)
-
 @app.route("/")
 def index():
 
@@ -385,4 +385,3 @@ def index():
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8080, debug=True)
-
